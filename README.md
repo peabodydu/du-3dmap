@@ -1,2 +1,2 @@
 # du-3dmap
-in-game 3d map
+Dual Universe in-game 3d map.
