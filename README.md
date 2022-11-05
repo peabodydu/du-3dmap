@@ -1,2 +1,2 @@
 # du-3dmap
-Dual Universe in-game 3d map.
+Dual Universe 3d map for calculating positions and distances.
