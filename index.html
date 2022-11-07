@@ -4,28 +4,27 @@
 		<meta charset="utf-8">
 		<title>DU-3dMap</title>
 		<style>
-			body { margin: 0; }
+			body { margin: 0; background-color: lightseagreen; }
 		</style>
+		<!--
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.146.0/three.min.js" integrity="sha512-Wft1v8e5sfJmolWfOyea3DBsf2qHZv6uBKLkvEYNSUo0wImWa9DYZH1lHU5y/UIfQu4xJ3xahqv1X4pvx3cv/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		-->
+		<script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three/examples/js/libs/lil-gui.module.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/TransformControls.js"></script>
+
 	</head>
-	<body>
+<body>
 
-		<script type="importmap">
-			{
-				"imports": {
-					"three": "https://unpkg.com/browse/three@0.146.0/build/three.module.js",
-					"examples/jsm": "https://unpkg.com/browse/three@0.146.0/examples/jsm/"
-				}
-			}
-		</script>
+		<script type="text/javascript">
 
-		<script type="module">
+			//import * as THREE from 'three/build/three.module.js';
 
-			import * as THREE from 'three';
+			//import { GUI } from 'https://unpkg.com/browse/three@0.146.0/examples/jsm/libs/lil-gui.module.min.js';
 
-			import { GUI } from 'examples/jsm/libs/lil-gui.module.min.js';
-
-			import { OrbitControls } from 'examples/jsm/controls/OrbitControls.js';
-			import { TransformControls } from 'examples/jsm/controls/TransformControls.js';
+			//import { OrbitControls } from 'https://unpkg.com/browse/three@0.146.0/examples/jsm/controls/OrbitControls.js';
+			//import { TransformControls } from 'https://unpkg.com/browse/three@0.146.0/examples/jsm/controls/TransformControls.js';
 
 			const scene = new THREE.Scene();
 			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -35,7 +34,7 @@
 			document.body.appendChild( renderer.domElement );
 
 			const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			const material = new THREE.MeshBasicMaterial( { color: 0x00f05f } );
 			const cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 
@@ -54,4 +53,3 @@
 		</script>
 	</body>
 </html>
-
