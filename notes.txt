@@ -1,0 +1,6 @@
+
+three.js moved to modules, but not all browsers support it. Firefox will with 108
+
+Use the older JS (non-module) version from an up-to-date CDN
+
+see: https://stackoverflow.com/questions/23434732/what-is-the-url-for-three-js-to-include-it-online/71377614#71377614
