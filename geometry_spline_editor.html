@@ -4,7 +4,6 @@
 		<title>three.js webgl - geometry - catmull spline editor</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="main.css">
 		<style>
 			body {
 				background-color: #f0f0f0;
@@ -16,10 +15,11 @@
 		</style>
 		
 		<script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/three/examples/js/libs/lil-gui.module.min.js"></script>
+		<!-- 
+		<script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/jsm/libs/lil-gui.module.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/TransformControls.js"></script>
-
+ -->
 	</head>
 	<body>
 
@@ -28,15 +28,26 @@
 			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - geometry - catmull spline editor
 		</div>
 
-		<script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.module.js"
+  }
+}
+</script>
+		<script type="module">
 
-			//import * as THREE from 'three';
+			import * as THREE from 'three';
 
 			//import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
-
 			//import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 			//import { TransformControls } from 'three/addons/controls/TransformControls.js';
 
+			//import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.module.js';
+			import { GUI } from 'https://cdn.jsdelivr.net/npm/three@0.146.0/examples/jsm/libs/lil-gui.module.min.js';
+			import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.146.0/examples/jsm/controls/OrbitControls.js';
+			import { TransformControls } from 'https://cdn.jsdelivr.net/npm/three@0.146.0/examples/jsm/controls/TransformControls.js';	
+			
 			let container;
 			let camera, scene, renderer;
 			const splineHelperObjects = [];
