@@ -1,5 +1,5 @@
 const atlas = {
-"1":
+"a1":
     {
     "atmosphereRadius": 56500.0,
     "atmosphereThickness": 12000.0,

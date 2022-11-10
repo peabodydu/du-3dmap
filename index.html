@@ -40,6 +40,21 @@
 
 		camera.position.z = 5;
 
+			const planeGeometry = new THREE.PlaneGeometry( 2000, 2000 );
+			planeGeometry.rotateX( - Math.PI / 2 );
+			const planeMaterial = new THREE.ShadowMaterial( { color: 0x000000, opacity: 0.2 } );
+
+			const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+			plane.position.y = - 200;
+			plane.receiveShadow = true;
+			scene.add( plane );
+
+			const helper = new THREE.GridHelper( 2000, 100 );
+			helper.position.y = - 199;
+			helper.material.opacity = 0.25;
+			helper.material.transparent = true;
+			scene.add( helper );
+
 		function animate() {
 			requestAnimationFrame( animate );
 
