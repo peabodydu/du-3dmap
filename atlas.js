@@ -1,4 +1,4 @@
-{
+const atlas = {
 "1":
     {
     "atmosphereRadius": 56500.0,

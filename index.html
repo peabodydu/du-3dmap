@@ -6,58 +6,48 @@
 		<style>
 			body { margin: 0; background-color: lightseagreen; }
 		</style>
-		<!--
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.146.0/three.min.js" integrity="sha512-Wft1v8e5sfJmolWfOyea3DBsf2qHZv6uBKLkvEYNSUo0wImWa9DYZH1lHU5y/UIfQu4xJ3xahqv1X4pvx3cv/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		-->
-		<script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/three/examples/js/libs/lil-gui.module.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/TransformControls.js"></script>
-
+		<script src="./atlas.js"></script>
 	</head>
 <body>
-	<script type="importmap">
-		{
-		  "imports": {
-			"three": "https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.module.js"
-		  }
+
+<script type="importmap">
+	{
+		"imports": {
+		"three": "https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.module.js"
 		}
+	}
 	</script>
-		<script type="module">
+	<script type="module">
+		import * as THREE from 'three';
 		
-					import * as THREE from 'three';
+		import { GUI } from 'https://cdn.jsdelivr.net/npm/three@0.146.0/examples/jsm/libs/lil-gui.module.min.js';
+		import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.146.0/examples/jsm/controls/OrbitControls.js';
+		import { TransformControls } from 'https://cdn.jsdelivr.net/npm/three@0.146.0/examples/jsm/controls/TransformControls.js';	
+		
+		const scene = new THREE.Scene();
+		const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-			//import * as THREE from 'three/build/three.module.js';
+		const renderer = new THREE.WebGLRenderer();
+		renderer.setSize( window.innerWidth, window.innerHeight );
+		document.body.appendChild( renderer.domElement );
 
-			//import { GUI } from 'https://unpkg.com/browse/three@0.146.0/examples/jsm/libs/lil-gui.module.min.js';
+		const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+		const material = new THREE.MeshBasicMaterial( { color: 0x00f05f } );
+		const cube = new THREE.Mesh( geometry, material );
+		scene.add( cube );
 
-			//import { OrbitControls } from 'https://unpkg.com/browse/three@0.146.0/examples/jsm/controls/OrbitControls.js';
-			//import { TransformControls } from 'https://unpkg.com/browse/three@0.146.0/examples/jsm/controls/TransformControls.js';
+		camera.position.z = 5;
 
-			const scene = new THREE.Scene();
-			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+		function animate() {
+			requestAnimationFrame( animate );
 
-			const renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
+			cube.rotation.x += 0.01;
+			cube.rotation.y += 0.01;
 
-			const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			const material = new THREE.MeshBasicMaterial( { color: 0x00f05f } );
-			const cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
+			renderer.render( scene, camera );
+		};
 
-			camera.position.z = 5;
-
-			function animate() {
-				requestAnimationFrame( animate );
-
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
-
-				renderer.render( scene, camera );
-			};
-
-			animate();
-		</script>
-	</body>
+		animate();
+	</script>
+</body>
 </html>
