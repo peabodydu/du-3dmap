@@ -36,9 +36,11 @@
 		const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 		const material = new THREE.MeshBasicMaterial( { color: 0x00f05f } );
 		const cube = new THREE.Mesh( geometry, material );
-		scene.add( cube );
+		//scene.add( cube );
 
-		camera.position.z = 5;
+		camera.position.x = 500;
+		camera.position.y = 500;
+		camera.position.z = 50;
 /* 
 			const planeGeometry = new THREE.PlaneGeometry( 2000, 2000 );
 			planeGeometry.rotateX( - Math.PI / 2 );
@@ -73,10 +75,27 @@
 			//const s = new THREE.Sphere( new THREE.Vector3(10,10,10),  3.5)
 			const sgeometry = new THREE.SphereGeometry( 15, 32, 16 );
 			//const smaterial = new THREE.MeshBasicMaterial( { color: 0x0000ff } );
-			const smaterial = new THREE.MeshNormalMaterial();
-			const sphere = new THREE.Mesh( sgeometry, smaterial );
+			const mnm = new THREE.MeshNormalMaterial();
+			const sphere = new THREE.Mesh( sgeometry, mnm );
 			sphere.position.x = 50;
-			scene.add( sphere );
+			//scene.add( sphere );
+
+
+			// load the planets/moons from atlas.lua data
+			const scale = 0.000005;
+			for(var propertyName in planets) {
+				if (propertyName.startsWith("Thades Asteroid")) { continue; }
+				const p = planets[propertyName];
+				const r = p.radius * 2 * scale * 1;
+				const g = new THREE.SphereGeometry( r, 32, 16 );
+				const s = new THREE.Mesh(g, mnm);
+				s.position.x = p.center[0] * scale;
+				s.position.y = p.center[2] * scale;
+				s.position.z = p.center[1] * scale;
+				scene.add(s);				
+			}
+
+
 			
 		function animate() {
 			requestAnimationFrame( animate );
