@@ -5,13 +5,27 @@
 		<title>DU-3dMap</title>
 		<style>
 			body { margin: 0; background-color: lightseagreen; }
+			map { width: 100%; height: 100%; display: block; background-color:  red;}
 		</style>
 		<script src="./planets.js"></script>
 	</head>
 <body>
 
-	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+	<div>
+		<span>DU position and distances | </span>
+		<span>Zoom:</span>
+		<select id="zoom" onselect="changeZoom()">
+			<option selected value="1">1x</option>
+			<option value="10">10x</option>
+			<option value="100">100x</option>
+			<option value="1000">1000x</option>
+			<option value="10000">10000x</option>
+		</select>
+		
+	</div>
+	<div id="map"></div>
 
+	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
 	<script type="importmap">
 		{
 			"imports": {
@@ -19,6 +33,7 @@
 			}
 		}
 	</script>
+
 	<script type="module">
 		import * as THREE from 'three';
 		
@@ -29,9 +44,13 @@
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
+		//const renderer = new THREE.WebGLRenderer();
+		//renderer.setSize( window.innerWidth, window.innerHeight );
+		//document.body.appendChild( renderer.domElement );
 		const renderer = new THREE.WebGLRenderer();
-		renderer.setSize( window.innerWidth, window.innerHeight );
-		document.body.appendChild( renderer.domElement );
+		const map = document.getElementById("map");
+		renderer.setSize(window.innerWidth, window.innerHeight); //not getting size of map?
+		map.appendChild( renderer.domElement );
 
 		const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 		const material = new THREE.MeshBasicMaterial( { color: 0x00f05f } );
@@ -82,31 +101,28 @@
 
 
 			// load the planets/moons from atlas.lua data
-			const scale = 0.000005;
+			const SCALE = 0.000005;
 			for(var propertyName in planets) {
 				if (propertyName.startsWith("Thades Asteroid")) { continue; }
 				const p = planets[propertyName];
-				const r = p.radius * 2 * scale * 1;
+				const r = p.radius * 2 * SCALE * 1;
 				const g = new THREE.SphereGeometry( r, 32, 16 );
 				const s = new THREE.Mesh(g, mnm);
-				s.position.x = p.center[0] * scale;
-				s.position.y = p.center[2] * scale;
-				s.position.z = p.center[1] * scale;
+				s.position.x = p.center[0] * SCALE;
+				s.position.y = p.center[2] * SCALE;
+				s.position.z = p.center[1] * SCALE;
 				scene.add(s);				
 			}
 
-
+		function changeZoom() {
+			SCALE = 0.000005 * 10
+		}
 			
 		function animate() {
 			requestAnimationFrame( animate );
 
-			cube.rotation.x += 0.01;
-			cube.rotation.y += 0.01;
-
-
 			// required if controls.enableDamping or controls.autoRotate are set to true
-			controls.update();
-
+			//controls.update();
 
 			renderer.render( scene, camera );
 		};
