@@ -7,7 +7,6 @@
         -8.0,
         -126303.0
         ],
-    "name": "Alioth",
     "radius": 126067.9
     },
 "Alioth Moon 1":
@@ -18,7 +17,6 @@
         -1509009.24,
         115525.0
         ],
-    "name": "Alioth Moon 1",
     "radius": 30000.0
     },
 "Alioth Moon 4":
@@ -29,7 +27,6 @@
         729681.81,
         -411465.62
         ],
-    "name": "Alioth Moon 4",
     "radius": 30330.0
     },
 "Haven":
@@ -40,7 +37,6 @@
         1124841.79,
         -2638867.62
         ],
-    "name": "Haven",
     "radius": 83443.02
     },
 "Jago":
@@ -51,7 +47,6 @@
         12765536.0,
         -3634464.0
         ],
-    "name": "Jago",
     "radius": 61590.0
     },
 "Madis":
@@ -62,7 +57,6 @@
         22665536.0,
         -34464.0
         ],
-    "name": "Madis",
     "radius": 44300.0
     },
 "Madis Moon 1":
@@ -73,7 +67,6 @@
         22966848.03,
         143079.98
         ],
-    "name": "Madis Moon 1",
     "radius": 10000.0
     },
 "Madis Moon 2":
@@ -84,7 +77,6 @@
         22243633.88,
         -214962.81
         ],
-    "name": "Madis Moon 2",
     "radius": 12000.0
     },
 "Madis Moon 3":
@@ -95,7 +87,6 @@
         22184726.9,
         -309986.22
         ],
-    "name": "Madis Moon 3",
     "radius": 15000.0
     },
 "Sanctuary":
@@ -106,7 +97,6 @@
         562655.32,
         -285074.95
         ],
-    "name": "Sanctuary",
     "radius": 83400.0
     },
 "Teoma":
@@ -117,7 +107,6 @@
         54665536.0,
         -934464.0
         ],
-    "name": "Teoma",
     "radius": 62000.0
     },
 "Thades":
@@ -128,7 +117,6 @@
         10865536.0,
         65536.0
         ],
-    "name": "Thades",
     "radius": 49000.0
     },
 "Thades Asteroid 00":
@@ -139,7 +127,6 @@
         10711862.68,
         2851.97
         ],
-    "name": "Thades Asteroid 00",
     "radius": 5215.19
     },
 "Thades Asteroid 01":
@@ -150,7 +137,6 @@
         10753803.2,
         117513.67
         ],
-    "name": "Thades Asteroid 01",
     "radius": 5215.19
     },
 "Thades Asteroid 02":
@@ -161,7 +147,6 @@
         10805882.53,
         256161.21
         ],
-    "name": "Thades Asteroid 02",
     "radius": 5215.19
     },
 "Thades Asteroid 03":
@@ -172,7 +157,6 @@
         10749726.84,
         -97063.9
         ],
-    "name": "Thades Asteroid 03",
     "radius": 5215.19
     },
 "Thades Asteroid 04":
@@ -183,7 +167,6 @@
         10741579.35,
         -34201.26
         ],
-    "name": "Thades Asteroid 04",
     "radius": 5215.19
     },
 "Thades Asteroid 05":
@@ -194,7 +177,6 @@
         10801230.42,
         -117467.33
         ],
-    "name": "Thades Asteroid 05",
     "radius": 5215.19
     },
 "Thades Asteroid 06":
@@ -205,7 +187,6 @@
         10755446.81,
         185994.55
         ],
-    "name": "Thades Asteroid 06",
     "radius": 5215.19
     },
 "Thades Asteroid 07":
@@ -216,7 +197,6 @@
         10943497.38,
         -37252.04
         ],
-    "name": "Thades Asteroid 07",
     "radius": 5215.19
     },
 "Thades Asteroid 08":
@@ -227,7 +207,6 @@
         10962202.27,
         -75767.64
         ],
-    "name": "Thades Asteroid 08",
     "radius": 5215.19
     },
 "Thades Asteroid 09":
@@ -238,7 +217,6 @@
         10961324.33,
         -37713.45
         ],
-    "name": "Thades Asteroid 09",
     "radius": 5215.19
     },
 "Thades Asteroid 10":
@@ -249,7 +227,6 @@
         11010112.2,
         -12840.27
         ],
-    "name": "Thades Asteroid 10",
     "radius": 5215.19
     },
 "Thades Asteroid 11":
@@ -260,7 +237,6 @@
         11009018.02,
         34480.51
         ],
-    "name": "Thades Asteroid 11",
     "radius": 5215.19
     },
 "Thades Asteroid 12":
@@ -271,7 +247,6 @@
         11010103.53,
         -19811.13
         ],
-    "name": "Thades Asteroid 12",
     "radius": 5215.19
     },
 "Thades Asteroid 13":
@@ -282,7 +257,6 @@
         10722122.97,
         63979.64
         ],
-    "name": "Thades Asteroid 13",
     "radius": 5215.19
     },
 "Thades Asteroid 14":
@@ -293,7 +267,6 @@
         11009804.08,
         20310.07
         ],
-    "name": "Thades Asteroid 14",
     "radius": 5215.19
     },
 "Thades Asteroid 15":
@@ -304,7 +277,6 @@
         11006962.68,
         90614.67
         ],
-    "name": "Thades Asteroid 15",
     "radius": 5215.19
     },
 "Thades Asteroid 16":
@@ -315,7 +287,6 @@
         11009683.55,
         130463.58
         ],
-    "name": "Thades Asteroid 16",
     "radius": 5215.19
     },
 "Thades Asteroid 17":
@@ -326,7 +297,6 @@
         11011307.1,
         100551.51
         ],
-    "name": "Thades Asteroid 17",
     "radius": 5215.19
     },
 "Thades Asteroid 18":
@@ -337,7 +307,6 @@
         10957206.76,
         212593.35
         ],
-    "name": "Thades Asteroid 18",
     "radius": 5215.19
     },
 "Thades Asteroid 19":
@@ -348,7 +317,6 @@
         10859282.88,
         268014.12
         ],
-    "name": "Thades Asteroid 19",
     "radius": 5215.19
     },
 "Thades Asteroid 20":
@@ -359,7 +327,6 @@
         10803741.3,
         -121255.16
         ],
-    "name": "Thades Asteroid 20",
     "radius": 5215.19
     },
 "Thades Asteroid 21":
@@ -370,7 +337,6 @@
         10792184.95,
         211277.78
         ],
-    "name": "Thades Asteroid 21",
     "radius": 5215.19
     },
 "Thades Asteroid 22":
@@ -381,7 +347,6 @@
         10891773.13,
         265131.1
         ],
-    "name": "Thades Asteroid 22",
     "radius": 5215.19
     },
 "Thades Asteroid 23":
@@ -392,7 +357,6 @@
         10813011.47,
         -112261.08
         ],
-    "name": "Thades Asteroid 23",
     "radius": 5215.19
     },
 "Thades Asteroid 24":
@@ -403,7 +367,6 @@
         10778311.95,
         -68014.35
         ],
-    "name": "Thades Asteroid 24",
     "radius": 5215.19
     },
 "Thades Asteroid 25":
@@ -414,7 +377,6 @@
         10832137.62,
         -97473.02
         ],
-    "name": "Thades Asteroid 25",
     "radius": 5215.19
     },
 "Thades Asteroid 26":
@@ -425,7 +387,6 @@
         10976710.89,
         153234.7
         ],
-    "name": "Thades Asteroid 26",
     "radius": 5215.19
     },
 "Thades Asteroid 27":
@@ -436,7 +397,6 @@
         10978093.03,
         202894.97
         ],
-    "name": "Thades Asteroid 27",
     "radius": 5215.19
     },
 "Thades Asteroid 28":
@@ -447,7 +407,6 @@
         10927735.88,
         231833.92
         ],
-    "name": "Thades Asteroid 28",
     "radius": 5215.19
     },
 "Thades Asteroid 29":
@@ -458,7 +417,6 @@
         10935957.84,
         206596.14
         ],
-    "name": "Thades Asteroid 29",
     "radius": 5215.19
     },
 "Thades Asteroid 30":
@@ -469,7 +427,6 @@
         10719768.95,
         122162.49
         ],
-    "name": "Thades Asteroid 30",
     "radius": 5215.19
     },
 "Thades Asteroid 31":
@@ -480,7 +437,6 @@
         10724428.22,
         30918.91
         ],
-    "name": "Thades Asteroid 31",
     "radius": 5215.19
     },
 "Thades Asteroid 32":
@@ -491,7 +447,6 @@
         11019630.48,
         64846.61
         ],
-    "name": "Thades Asteroid 32",
     "radius": 5215.19
     },
 "Thades Asteroid 33":
@@ -502,7 +457,6 @@
         10762037.83,
         209654.75
         ],
-    "name": "Thades Asteroid 33",
     "radius": 5215.19
     },
 "Thades Moon 1":
@@ -513,7 +467,6 @@
         10907080.7,
         433861.28
         ],
-    "name": "Thades Moon 1",
     "radius": 14000.0
     },
 "Thades Moon 2":
@@ -524,7 +477,6 @@
         10432766.6,
         19553.82
         ],
-    "name": "Thades Moon 2",
     "radius": 15000.0
     }
 }
