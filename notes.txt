@@ -7,8 +7,20 @@ Center of the safe zone
 
 
 
+https://mathworld.wolfram.com/Point-LineDistance3-Dimensional.html
+
+x1 ----------- x2
+           |
+           |
+           x0
+
+d = | (x0 - x1) . (x0 - x2) |
+    -------------------------
+         | (x2 - x1) | ^2
 
 
+
+----------------------
 three.js moved to modules, but not all browsers support it. Firefox will with 108
 
 Use the older JS (non-module) version from an up-to-date CDN
