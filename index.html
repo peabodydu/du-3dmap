@@ -8,9 +8,17 @@
 			map { width: 100%; height: 100%; display: block; background-color:  red;}
 		</style>
 		<script src="./planets.js"></script>
+	</head>
+<body>
+
+	<div>
+		<span>DU position and distances</span>	
+	</div>
+	<div id="map"></div>
 
 
 	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
 	<script type="importmap">
 		{
 			"imports": {
@@ -21,8 +29,8 @@
 
 	<script type="module">
 		import * as THREE from 'three';
-		
-		//import { GUI } from 'https://unpkg.com/three/examples/jsm/libs/lil-gui.module.min.js';
+
+		import { GUI } from 'https://unpkg.com/three/examples/jsm/libs/lil-gui.module.min.js';
 		import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls.js';
 		import { TransformControls } from 'https://unpkg.com/three/examples/jsm/controls/TransformControls.js';	
 		
@@ -47,18 +55,55 @@
 		plane.receiveShadow = true;
 		scene.add( plane );
 */
-		const gridHelper = new THREE.GridHelper( 2000, 100 );
-		//gridHelper.position.y = - 199;
-		gridHelper.material.opacity = 0.25;
-		gridHelper.material.transparent = true;
-		scene.add( gridHelper );
+		//const polarGridHelper = new THREE.PolarGridHelper( radius, sectors, rings, divisions );
+		const polarGridHelper = new THREE.PolarGridHelper( 1000, 64, 100, 64, "#0000ff", "#000070" );
+		polarGridHelper.material.opacity = 0.15;
+		polarGridHelper.material.transparent = true;
+		scene.add( polarGridHelper );
 
-		// const pointLight = new THREE.PointLight(); // 0xffffa0, 3, 100 );
-		// pointLight.position.set( 0, 0, 0 );
-		// scene.add( pointLight );
+		//////////////////
+		const gui = new GUI()
+		const guiObject = {
+			myBoolean: true,
+			myFunction: function() { alert('lilgui'); camera.zoom=10;controls.update(); },
+			myString: 'lil-gui',
+			myNumber: 1
+		};
+
+		gui.add( guiObject, 'myBoolean' );  // Checkbox
+		gui.add( guiObject, 'myFunction' ); // Button
+		gui.add( guiObject, 'myString' );   // Text Field
+		gui.add( guiObject, 'myNumber' );   // Number Field
+
+		// Add sliders to number fields by passing min and max
+		gui.add( guiObject, 'myNumber', 0, 1 );
+		gui.add( guiObject, 'myNumber', 0, 100, 2 ); // snap to even numbers
+
+		// Create dropdowns by passing an array or object of named values
+		gui.add( guiObject, 'myNumber', [ 0, 1, 2 ] );
+		gui.add( guiObject, 'myNumber', { Label1: 0, Label2: 1, Label3: 2 } );
+/*
+		// Chainable methods
+		gui.add( guiObject, 'myProperty' )
+			.name( 'Custom Name' )
+			.onChange( value => {
+				console.log( value );
+			} );
+
+		// Create color pickers for multiple color formats
+		const colorFormats = {
+			string: '#ffffff',
+			int: 0xffffff,
+			object: { r: 1, g: 1, b: 1 },
+			array: [ 1, 1, 1 ]
+		};
+
+		gui.addColor( colorFormats, 'string' );
+*/
+		//////////////////
 
 		const controls = new OrbitControls( camera, renderer.domElement );			
-		camera.position.set( 0, 20, 100 );
+		//camera.position.set( 0, 20, 100 );
 		controls.update();
 
 		const normalMaterial = new THREE.MeshNormalMaterial();
@@ -78,9 +123,6 @@
 		}
 
 		
-		export function changeZoom() {
-			camera.changeZoom(2.0);
-		}
 		function parsePosition(pos) {
 			var posAxes = pos.match(/#(-?[\d.]+), (-?[\d.]+), (-?[\d.]+)/);
 			var x = posAxes[1]
@@ -93,32 +135,14 @@
 			requestAnimationFrame( animate );
 
 			// required if controls.enableDamping or controls.autoRotate are set to true
-			//controls.update();
+			controls.update();
 			//controls.update() must be called after any manual changes to the camera's transform
 
 			renderer.render( scene, camera );
 		};
 
 		animate();
-		window.changeZoom = changeZoom;
 	</script>
 
-</head>
-<body>
-	
-
-	<div>
-		<span>DU position and distances | </span>
-		<span>Zoom:</span>
-		<select id="zoom" onchange="changeZoom()">
-			<option selected value="1">1x</option>
-			<option value="10">10x</option>
-			<option value="100">100x</option>
-			<option value="1000">1000x</option>
-			<option value="10000">10000x</option>
-		</select>
-		
-	</div>
-	<div id="map"></div>
 </body>
 </html>
