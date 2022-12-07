@@ -9,14 +9,19 @@ Center of the safe zone
 
 https://mathworld.wolfram.com/Point-LineDistance3-Dimensional.html
 
-x1 ----------- x2
+
+x1 --------+-- x2
            |
+           | d
            |
            x0
 
-d = | (x0 - x1) * (x0 - x2) |
+d = | (x0 - x1) dot (x0 - x2) |
     -------------------------
          | (x2 - x1) |
+
+d = distance from point to pipe
+
 
 
 
