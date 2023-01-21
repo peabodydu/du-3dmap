@@ -45,6 +45,9 @@
 		camera.position.x = 500;
 		camera.position.y = 500;
 		camera.position.z = 50;
+		
+		camera.zoom = 4;
+		camera.updateProjectionMatrix();
 /* 
 		const planeGeometry = new THREE.PlaneGeometry( 2000, 2000 );
 		planeGeometry.rotateX( - Math.PI / 2 );
@@ -65,7 +68,7 @@
 		const gui = new GUI()
 		const guiObject = {
 			myBoolean: true,
-			myFunction: function() { alert('lilgui'); camera.zoom=10;controls.update(); },
+			myFunction: function() { alert('lilgui'); camera.zoom=1;camera.updateProjectionMatrix();controls.update(); },
 			myString: 'lil-gui',
 			myNumber: 1
 		};
@@ -116,9 +119,9 @@
 			const r = p.radius * 2 * SCALE * 1;
 			const g = new THREE.SphereGeometry( r, 32, 16 );
 			const s = new THREE.Mesh(g, normalMaterial);
-			s.position.x = p.center[0] * SCALE;
+			s.position.x = p.center[1] * SCALE;
 			s.position.y = p.center[2] * SCALE;
-			s.position.z = p.center[1] * SCALE;
+			s.position.z = p.center[0] * SCALE;
 			scene.add(s);				
 		}
 
@@ -141,6 +144,7 @@
 			renderer.render( scene, camera );
 		};
 
+		document.cookie = "du=pos";
 		animate();
 	</script>
 
