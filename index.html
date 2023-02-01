@@ -35,7 +35,7 @@
 		import { TransformControls } from 'https://unpkg.com/three/examples/jsm/controls/TransformControls.js';	
 		
 		const scene = new THREE.Scene();
-		const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+		const camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 2000 );
 
 		const renderer = new THREE.WebGLRenderer();
 		const map = document.getElementById("map");
@@ -63,6 +63,7 @@
 		polarGridHelper.material.transparent = true;
 		scene.add( polarGridHelper );
 
+
 		//////////////////
 		const gui = new GUI()
 		const guiObject = {
@@ -75,18 +76,17 @@
 				camera.position.x = 500;
 				camera.position.y = 500;
 				camera.position.z = 50;
+				camera.zoom = 1;
 				camera.updateProjectionMatrix(); 
-				//this.Zoom = 1; //update zoom control
+				controls.update();
 				//this.Zoom.updateDisplay();
-				//camera.zoom = 1;
-				// controls.update();
 				//Zoom.setValue(1);
 			},
 			Zoom: 1,
 		};
 
 		gui.add( guiObject, 'ResetCamera' ).onChange( value => {
-			this.Zoom.setValue(1.0);
+			//guiObject.Zoom.setValue(1);
 		})
 		gui.add( guiObject, 'Zoom', 1, 10, 0.5 ).onChange( value => {
 			camera.zoom=value;
