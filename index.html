@@ -41,10 +41,16 @@
 		const map = document.getElementById("map");
 		renderer.setSize(window.innerWidth, window.innerHeight); //not getting size of map?
 		map.appendChild( renderer.domElement );
+		
+		scene.background = new THREE.Color( 0x777777 );
+		const light = new THREE.AmbientLight( 0x404040 );
+		scene.add( light );
 
 		camera.position.x = 500;
 		camera.position.y = 500;
 		camera.position.z = 50;
+		
+		const SCALE = 0.000005;
 		
 
 /* 
@@ -58,11 +64,20 @@
 		scene.add( plane );
 */
 		//const polarGridHelper = new THREE.PolarGridHelper( radius, sectors, rings, divisions );
-		const polarGridHelper = new THREE.PolarGridHelper( 1000, 64, 100, 64, "#0000ff", "#000070" );
-		polarGridHelper.material.opacity = 0.15;
+		const polarGridHelper = new THREE.PolarGridHelper( 1000, 64, 100, 64, "#333333", "#555555" );
+		polarGridHelper.material.opacity = 0.25;
 		polarGridHelper.material.transparent = true;
 		scene.add( polarGridHelper );
 
+		// center of safe zone: 13771471.0000,7364470.4372,-128971.0000
+		// 90su radius
+		const safeZone = new THREE.SphereGeometry( 90, 16, 8 );
+		const safeZoneMaterial = new THREE.MeshBasicMaterial( { color: 'lightblue', wireframe: true } ); // opacity: 0.1, transparent: true
+		const safeZoneSphere = new THREE.Mesh( safeZone, safeZoneMaterial );
+		safeZoneSphere.position.z = 13771471.0000 * SCALE;
+		safeZoneSphere.position.x = 7364470.4372 * SCALE;
+		safeZoneSphere.position.y = -128971.0000 * SCALE;
+		scene.add( safeZoneSphere );
 
 		//////////////////
 		const gui = new GUI()
@@ -131,15 +146,15 @@
 		controls.update();
 
 		const normalMaterial = new THREE.MeshNormalMaterial();
+		const redMaterial = new THREE.MeshBasicMaterial({ color: 'red' })
 
 		// load the planets/moons from atlas.lua data
-		const SCALE = 0.000005;
 		for(var propertyName in planets) {
 			if (propertyName.startsWith("Thades Asteroid")) { continue; }
 			const p = planets[propertyName];
 			const r = p.radius * 2 * SCALE * 1;
 			const g = new THREE.SphereGeometry( r, 32, 16 );
-			const s = new THREE.Mesh(g, normalMaterial);
+			const s = new THREE.Mesh(g, redMaterial);
 			s.position.x = p.center[1] * SCALE;
 			s.position.y = p.center[2] * SCALE;
 			s.position.z = p.center[0] * SCALE;
